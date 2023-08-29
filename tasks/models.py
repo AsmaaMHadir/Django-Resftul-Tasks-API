@@ -10,8 +10,7 @@ class Task(models.Model):
     ]
     
     
-    levels = {'High': 1, 'Medium': 2, 'Low': 3}
-    
+   
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     deadline = models.DateField()
@@ -19,6 +18,7 @@ class Task(models.Model):
     owner = models.ForeignKey(
         "auth.User", related_name="tasks", on_delete=models.CASCADE
     )  
+    
     
 
 
